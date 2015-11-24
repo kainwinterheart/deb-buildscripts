@@ -55,5 +55,6 @@ echo -e "\tmv tmp/usr debian/${NAME}/" >> debian/rules
 mkdir -p debian/source
 echo "8" > debian/compat
 echo "3.0 (quilt)" > debian/source/format
+sed -i -e 's/UNRELEASED/unstable/g' debian/changelog
 #Build it
 debuild -us -uc -b
